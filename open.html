@@ -16,17 +16,23 @@
         padding: 0;
     }
 
-    .container {
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 24px;
-        text-align: center;
+    .hero {
+        height: 100vh; /* 關鍵：剛好一個螢幕高度 */
+        width: 100%;
+        background-image: url("16x9.png");
+        background-size: cover;      /* 圖片填滿不變形 */
+        background-position: center; /* 置中 */
+        background-repeat: no-repeat;
+  
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 16px;
+    .title {
+        color: white;
+        font-size: 40px;
+        text-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 
     @media (max-width: 480px) {
@@ -135,9 +141,8 @@
 </head>
 
 <body>
-    
-    <div class="container">
-        <img src="16x9.png">
-    </div>
+    <section class="hero">
+        <h1 class="title">一週年回顧</h1>
+    </section>
 </body>
 </html>
