@@ -17,11 +17,12 @@
     }
 
     .hero {
-        height: 100vh; /* 關鍵：剛好一個螢幕高度 */
+        height: 100vh;
+        height: 100svh;
         width: 100%;
         background-image: url("16x9.png");
-        background-size: cover;      /* 圖片填滿不變形 */
-        background-position: center; /* 置中 */
+        background-size: cover;
+        background-position: center;
         background-repeat: no-repeat;
   
         display: flex;
@@ -142,7 +143,11 @@
 
 <body>
     <section class="hero">
-        <h1 class="title">一週年回顧</h1>
+        <h1 class="title">一週年回顧<br><span id="htext"></span></h1>
     </section>
+    <script>
+        document.querySelector("#htext").textContent = new Date().toLocaleDateString("zh-TW");
+    </script>
 </body>
 </html>
+
