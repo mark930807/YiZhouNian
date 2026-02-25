@@ -11,9 +11,16 @@
     /* 所有頁面共用的樣式 */
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI","Noto Sans TC", sans-serif;
-        background:#000000;
+        /*background:#000000;*/
         margin: 0;
         padding: 0;
+    }
+
+    .container {
+        margin: 0 auto;
+        text-align: center;
+        flex:1;
+        box-sizing:border-box;
     }
 
     .hero {
@@ -24,16 +31,58 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        flex-direction: column;
   
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
+    .card1{
+        height: 100vh;
+        height: 100svh;
+        width: 100%;
+        background: #aaa;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slider {
+        display: flex;
+        gap: 20px;              /* 卡片間距 */
+        overflow-x: auto;       /* 開啟左右滑動 */
+        padding: 20px 40px;
+        scroll-snap-type: x mandatory; 
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .slide-card {
+    min-width: 280px;       /* 卡片寬度（重點！） */
+    max-width: 320px;
+    height: 380px;
+    
+    background: white;
+    border-radius: 20px;
+    padding: 16px;
+    box-sizing: border-box;
+    
+    flex-shrink: 0;         /* 防止被壓縮（超重要） */
+    scroll-snap-align: start;
+    
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
     .title {
         color: white;
         font-size: 40px;
         text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .titlesmallfone{
+        color: #aaa;
+        font-size: 30px;
     }
 
     @media (max-width: 480px) {
@@ -143,10 +192,45 @@
 
 <body>
     <section class="hero">
-        <h1 class="title">一週年回顧<br><span id="htext"></span></h1>
+        <h1 class="title">披薩吃水餃已經<span id="htext"></span>天<br></h1>
+        <p class="title titlesmallfone">⇊ 往下滑以繼續 ⇊</p>
     </section>
+    <div class="container">
+        <div class="card1">
+            <h1>這一年我們做了什麼</h1>
+            <div class="slider">
+                <div class="slide-card">
+                    <h1>2025 四月</h1>
+                </div>
+                <div class="slide-card">
+                    <h1>2025 四月</h1>
+                </div>
+                <div class="slide-card">
+                    <h1>2025 四月</h1>
+                </div>
+                <div class="slide-card">
+                    <h1>2025 四月</h1>
+                </div>
+                <div class="slide-card">
+                    <h1>2025 四月</h1>
+                </div>
+                <div class="slide-card">
+                    <h1>2025 四月</h1>
+                </div>
+                <div class="slide-card">
+                    <h1>2025 四月</h1>
+                </div>
+                <div class="slide-card">
+                    <h1>2025 四月</h1>
+                </div>
+            </div>
+    </div>
+    </div>
+    
+    <h1>c8 c8 c8 </h1>
     <script>
-        document.querySelector("#htext").textContent = new Date().toLocaleDateString("zh-TW");
+        var iDays = parseInt(Math.abs(new Date() - new Date("2025-3-17")) / 1000 / 60 / 60 / 24);
+        document.querySelector("#htext").textContent = iDays;//new Date().toLocaleDateString("zh-TW");
     </script>
 </body>
 </html>
