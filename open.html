@@ -16,6 +16,17 @@
         padding: 0;
     }
 
+    html, body {
+        height: 100%;
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+
+    .hero,.card1 {
+        scroll-snap-align: start;
+    }
+
     .container {
         margin: 0 auto;
         text-align: center;
