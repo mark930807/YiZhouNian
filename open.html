@@ -59,20 +59,29 @@
     }
 
     .slide-card {
-    min-width: 280px;       /* 卡片寬度（重點！） */
-    max-width: 320px;
-    height: 380px;
+        min-width: 280px;       /* 卡片寬度（重點！） */
+        max-width: 320px;
+        height: 380px;
     
-    background: white;
-    border-radius: 20px;
-    padding: 16px;
-    box-sizing: border-box;
+        background: white;
+        border-radius: 20px;
+        padding: 16px;
+        box-sizing: border-box;
     
-    flex-shrink: 0;         /* 防止被壓縮（超重要） */
-    scroll-snap-align: start;
+        flex-shrink: 0;         /* 防止被壓縮（超重要） */
+        scroll-snap-align: start;
     
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .slider-wrapper {
+        width: 100%;               /* 只占頁面 90% */
+        max-width: 3000px;        /* 最大寬度 */
+        margin: 0 auto;           /* 置中 */
+        overflow-x: hidden;       /* 只讓 slider 滑，超出的部分隱藏 */
+    }
+
+
 
     .title {
         color: white;
@@ -198,32 +207,46 @@
     <div class="container">
         <div class="card1">
             <h1>這一年我們做了什麼</h1>
+            <div class="slider-wrapper">
             <div class="slider">
                 <div class="slide-card">
-                    <h1>2025 四月</h1>
+                    <h1>2025 Mar.</h1>
                 </div>
                 <div class="slide-card">
-                    <h1>2025 四月</h1>
+                    <h1>2025 Apr.</h1>
                 </div>
                 <div class="slide-card">
-                    <h1>2025 四月</h1>
+                    <h1>2025 May.</h1>
                 </div>
                 <div class="slide-card">
-                    <h1>2025 四月</h1>
+                    <h1>2025 Jun.</h1>
                 </div>
                 <div class="slide-card">
-                    <h1>2025 四月</h1>
+                    <h1>2025 Jul.</h1>
                 </div>
                 <div class="slide-card">
-                    <h1>2025 四月</h1>
+                    <h1>2025 Aug.</h1>
                 </div>
                 <div class="slide-card">
-                    <h1>2025 四月</h1>
+                    <h1>2025 Sep.</h1>
                 </div>
                 <div class="slide-card">
-                    <h1>2025 四月</h1>
+                    <h1>2025 Oct.</h1>
+                </div>
+                <div class="slide-card">
+                    <h1>2025 Nov.</h1>
+                </div>
+                <div class="slide-card">
+                    <h1>2025 Dec.</h1>
+                </div>
+                <div class="slide-card">
+                    <h1>2025 Jan.</h1>
+                </div>
+                <div class="slide-card">
+                    <h1>2025 Feb.</h1>
                 </div>
             </div>
+        </div>
     </div>
     </div>
     
