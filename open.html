@@ -107,11 +107,16 @@
 
     .bfont{
         width: 80%;
-        font-size:25px;
+        font-size:22px;
     }
 
     h1{
         color:#3e3630;
+    }
+
+    .smaillfont{
+        color:#aaa;
+        font-size:20px;
     }
 
     .slider h1{
@@ -129,6 +134,18 @@
         object-fit: cover;
         border-radius: 12px;
         margin: 10px 0;
+    }
+
+    .card1 button{
+        width: 300px;
+        background: #c7d3db;
+        color: #3e3630;
+        margin-bottom: 8px;
+        border-radius: 12px;
+    }
+
+    .redfont{
+        color:rgb(209, 68, 68);
     }
 
     @media (max-width: 480px) {
@@ -322,7 +339,16 @@
             <p class="bfont">謝謝你陪我一年，我準備了一個禮物。</p>
             <img class="giftimg" src="pingu0.png">
             <p class="bfont">這四塊拼圖是獎品的剪影，答題正確可以解鎖一塊拼圖，題目都是來自上面的回顧內容，依序答題完成將得到拼圖上的獎品。</p>
+            <p class="smaillfont">※頁面重啟後紀錄將刷新※</p>
             <p class="titlesmallfone">⇊ 往下滑開始答題 ⇊</p>
+        </div>
+        <div class="card1">
+            <h1>第一題</h1>
+            <p class="bfont">2025七月的愛心制服是在哪間學校的營隊</p>
+            <button onclick="answrong('#wrong1')"><h2>明義附幼</h2></button>
+            <button onclick="showPage('hb')"><h2>明利附幼</h2></button>
+            <button onclick="answrong('#wrong1')"><h2>前金幼兒園</h2></button>
+            <p class="smaillfont redfont"><span id="wrong1"></span></p>
         </div>
     </div>
     
@@ -330,6 +356,9 @@
     <script>
         var iDays = parseInt(Math.abs(new Date() - new Date("2025-3-17")) / 1000 / 60 / 60 / 24);
         document.querySelector("#htext").textContent = iDays;//new Date().toLocaleDateString("zh-TW");
+        function answrong(wnum) {
+            document.querySelector(wnum).textContent = "答錯囉!再想想看";
+        }
     </script>
 </body>
 </html>
