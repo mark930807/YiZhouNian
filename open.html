@@ -166,6 +166,16 @@
         border-radius: 12px;
     }
 
+    .card2 input{
+        width: 300px;
+        height: 40px;
+        background: #3e3630;
+        color: #fcf7df;
+        text-align: center;
+        margin-bottom: 8px;
+        border-radius: 8px;
+    }
+
     .redfont{
         color:rgb(209, 68, 68);
     }
@@ -422,10 +432,14 @@
         </div>
         <div id="Q5" class="card2">
             <h1>終極加碼題</h1>
-            <p class="bfont">我們跟你爭鮮同事在海安路吃飯的店名叫什麼?</p>
-            <button onclick="answrong('#wrong4')"><h2>男性滷味</h2></button>
-            <button onclick="answrong('#wrong4')"><h2>理性滷味</h2></button>
-            <a href="#ans4"><button onclick="showPage('ans4');showPage('Q5')"><h2>感性滷味</h2></button></a>
+            <p class="bfont">去年告白時問了這個問題，那時候你說等我們一年的時候再告訴我，現在可以告訴我了吧</p>
+            <img src="ans.jpg">
+            <p class="bfont">回答完這個問題就可以拿到禮物了!</p>
+            <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdkD-OIqYGamQrQ5DWCLH5jjLAwvhK3TTA-3VyRP8et-p8i7Q/formResponse"method="POST"target="hidden_iframe">
+                <input type="text" name="entry.1127753635" placeholder="回答我!!"><br>
+                <button type="submit"><h2>送出</h2></button>
+            </form>
+            <iframe name="hidden_iframe" style="display:none;"></iframe>
             <p class="smaillfont redfont"><span id="wrong4"></span></p>
         </div>
         <h1>專心答題不要偷看!</h1>
