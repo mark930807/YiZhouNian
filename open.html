@@ -393,16 +393,45 @@
             <p class="titlesmallfone">⇊ 往下滑以繼續 ⇊</p>
         </div>
         <div id="Q3" class="card2">
-            <h1>第二題</h1>
-            <p class="bfont">澎湖回來之後我送妳的獎狀中，有下列哪些圖片?</p>
-            <a href="#ans2"><button onclick="showPage('ans2');showPage('Q3')"><h2>矮袋鼠與丼飯</h2></button></a>
-            <button onclick="answrong('#wrong2')"><h2>荔枝與倉鼠</h2></button>
-            <button onclick="answrong('#wrong2')"><h2>恐龍與挖土機</h2></button>
-            <p class="smaillfont redfont"><span id="wrong2"></span></p>
+            <h1>第三題</h1>
+            <p class="bfont">去遠雄時我們一個很想坐但在施工的設施是什麼?</p>
+            <a href="#ans3"><button onclick="showPage('ans3');showPage('Q4')"><h2>纜車</h2></button></a>
+            <button onclick="answrong('#wrong3')"><h2>海盜船</h2></button>
+            <button onclick="answrong('#wrong3')"><h2>入口的剪票機</h2></button>
+            <p class="smaillfont redfont"><span id="wrong3"></span></p>
         </div>
+        <div id="ans3" class="card2">
+            <h1>恭喜你答對第三題</h1>
+            <img class="giftimg" src="pingu3.png">
+            <p class="bfont">又又獲得了一片拼圖</p>
+            <p class="titlesmallfone">⇊ 往下滑以繼續 ⇊</p>
+        </div>
+        <div id="Q4" class="card2">
+            <h1>第四題</h1>
+            <p class="bfont">我們跟你爭鮮同事在海安路吃飯的店名叫什麼?</p>
+            <button onclick="answrong('#wrong4')"><h2>男性滷味</h2></button>
+            <button onclick="answrong('#wrong4')"><h2>理性滷味</h2></button>
+            <a href="#ans4"><button onclick="showPage('ans4');showPage('Q5')"><h2>感性滷味</h2></button></a>
+            <p class="smaillfont redfont"><span id="wrong4"></span></p>
+        </div>
+        <div id="ans4" class="card2">
+            <h1>恭喜你答對第四題</h1>
+            <img class="giftimg" src="pingu4.png">
+            <p class="bfont">又又又獲得了一片拼圖</p>
+            <p class="titlesmallfone">⇊ 往下滑以繼續 ⇊</p>
+        </div>
+        <div id="Q5" class="card2">
+            <h1>終極加碼題</h1>
+            <p class="bfont">我們跟你爭鮮同事在海安路吃飯的店名叫什麼?</p>
+            <button onclick="answrong('#wrong4')"><h2>男性滷味</h2></button>
+            <button onclick="answrong('#wrong4')"><h2>理性滷味</h2></button>
+            <a href="#ans4"><button onclick="showPage('ans4');showPage('Q5')"><h2>感性滷味</h2></button></a>
+            <p class="smaillfont redfont"><span id="wrong4"></span></p>
+        </div>
+        <h1>專心答題不要偷看!</h1>
     </div>
     
-    <h1>c8 c8 c8 </h1>
+    
     <script>
         var iDays = parseInt(Math.abs(new Date() - new Date("2025-3-17")) / 1000 / 60 / 60 / 24);
         document.querySelector("#htext").textContent = iDays;//new Date().toLocaleDateString("zh-TW");
