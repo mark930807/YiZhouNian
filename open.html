@@ -435,14 +435,20 @@
             <p class="bfont">去年告白時問了這個問題，那時候你說等我們一年的時候再告訴我，現在可以告訴我了吧</p>
             <img src="ans.jpg">
             <p class="bfont">回答完這個問題就可以拿到禮物了!</p>
-            <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdkD-OIqYGamQrQ5DWCLH5jjLAwvhK3TTA-3VyRP8et-p8i7Q/formResponse"method="POST"target="hidden_iframe">
+            <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdkD-OIqYGamQrQ5DWCLH5jjLAwvhK3TTA-3VyRP8et-p8i7Q/formResponse"method="POST"target="hidden_iframe"onsubmit="showPage('ans5'),redirectPage()">
                 <input type="text" name="entry.1127753635" placeholder="回答我!!"><br>
-                <button type="submit"><h2>送出</h2></button>
+                <button type="submit"><h2>送出答案</h2></button>
             </form>
             <iframe name="hidden_iframe" style="display:none;"></iframe>
             <p class="smaillfont redfont"><span id="wrong4"></span></p>
         </div>
-        <h1>專心答題不要偷看!</h1>
+        <div id="ans5" class="card2">
+            <h1>恭喜你完成所有題目</h1>
+            <img class="giftimg" src="pingu.png">
+            <p class="bfont">禮物在行李箱裡，行李箱的密碼是</p>
+            <h1>387</h1>
+        </div>
+        <img src="eye.png">
     </div>
     
     
@@ -454,6 +460,9 @@
         }
         function showPage(pageId) {
             document.getElementById(pageId).classList.add('active');
+        }
+        function redirectPage(){
+            window.location.hash = "ans5";
         }
     </script>
 </body>
