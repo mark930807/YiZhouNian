@@ -23,7 +23,7 @@
         scroll-behavior: smooth;
     }
 
-    .hero,.card1 {
+    .hero,.card1,.card2 {
         scroll-snap-align: start;
     }
 
@@ -50,6 +50,28 @@
     }
 
     .card1{
+        height: 100vh;
+        height: 100svh;
+        width: 100%;
+        background: #fcf7df;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card2{
+        height: 100vh;
+        height: 100svh;
+        width: 100%;
+        background: #fcf7df;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card2.active{
         height: 100vh;
         height: 100svh;
         width: 100%;
@@ -136,7 +158,7 @@
         margin: 10px 0;
     }
 
-    .card1 button{
+    .card1 button,.card2 button{
         width: 300px;
         background: #c7d3db;
         color: #3e3630;
@@ -346,6 +368,20 @@
             <h1>第一題</h1>
             <p class="bfont">2025七月的愛心制服是在哪間學校的營隊</p>
             <button onclick="answrong('#wrong1')"><h2>明義附幼</h2></button>
+            <a href="#ans1"><button onclick="showPage('ans1');showPage('Q2')"><h2>明利附幼</h2></button></a>
+            <button onclick="answrong('#wrong1')"><h2>前金幼兒園</h2></button>
+            <p class="smaillfont redfont"><span id="wrong1"></span></p>
+        </div>
+        <div id="ans1" class="card2">
+            <h1>恭喜你答對第一題</h1>
+            <img class="giftimg" src="pingu1.png">
+            <p class="bfont">獲得了一片拼圖</p>
+            <p class="titlesmallfone">⇊ 往下滑以繼續 ⇊</p>
+        </div>
+        <div id="Q2" class="card2">
+            <h1>第二題</h1>
+            <p class="bfont">2025七月的愛心制服是在哪間學校的營隊</p>
+            <button onclick="answrong('#wrong1')"><h2>明義附幼</h2></button>
             <button onclick="showPage('hb')"><h2>明利附幼</h2></button>
             <button onclick="answrong('#wrong1')"><h2>前金幼兒園</h2></button>
             <p class="smaillfont redfont"><span id="wrong1"></span></p>
@@ -358,6 +394,9 @@
         document.querySelector("#htext").textContent = iDays;//new Date().toLocaleDateString("zh-TW");
         function answrong(wnum) {
             document.querySelector(wnum).textContent = "答錯囉!再想想看";
+        }
+        function showPage(pageId) {
+            document.getElementById(pageId).classList.add('active');
         }
     </script>
 </body>
