@@ -27,6 +27,16 @@
         scroll-snap-align: start;
     }
 
+    #bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;   /* 讓影片像 background-size: cover */
+        z-index: -1;         /* 放到文字後面 */
+    }
+
     .container {
         margin: 0 auto;
         text-align: center;
@@ -38,10 +48,8 @@
         height: 100vh;
         height: 100svh;
         width: 100%;
-        background-image: url("onepage.gif");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        position: relative;  /* 讓 video 能定位 */
+        overflow: hidden;
         flex-direction: column;
   
         display: flex;
@@ -299,6 +307,9 @@
 
 <body>
     <section class="hero">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="首頁背景.mp4" type="video/mp4">
+        </video>
         <h1 class="title">披薩吃水餃已經<span id="htext"></span>天<br></h1>
         <p class="title titlesmallfone">⇊ 往下滑以繼續 ⇊</p>
     </section>
