@@ -37,6 +37,24 @@
         z-index: -1;         /* 放到文字後面 */
     }
 
+    .corner-box{
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        background: rgba(255,255,255,0.8);
+        padding: 10px 15px;
+        border-radius: 16px;
+        backdrop-filter: blur(8px);
+        z-index: 9999;
+    }
+
+    .corner-box.iz{
+        display: none;
+    }
+
     .container {
         margin: 0 auto;
         text-align: center;
@@ -184,6 +202,14 @@
         border-radius: 12px;
     }
 
+    .corner-box button{
+        width: 50px;
+        height: 30px;
+        background: #c7d3db;
+        color: #3e3630;
+        border-radius: 12px;
+    }
+
     .card2 input{
         width: 300px;
         height: 40px;
@@ -269,11 +295,13 @@
 </head>
 
 <body>
-    <audio id="bgm" src="music.mp3" loop muted></audio>
+    <audio id="bgm" src="music.mp3" loop></audio>
+    <audio id="pingubgm" src="pingu.mp3" loop></audio>
     <section class="hero">
         <video autoplay muted loop playsinline id="bg-video">
             <source src="首頁背景.mp4" type="video/mp4">
         </video>
+        <div id="bf" class="corner-box"> <span>開啟音樂達到最佳體驗!</span><button onclick="bfmusic()">open!</button>  </div>
         <h2 class="title"><span id="dayfont"></span><br></h2>
         <h1 class="title">Day<span id="htext"></span><br></h1>
         <p class="title titlesmallfone onapagedown">⇊ 往下滑以繼續 ⇊</p>
@@ -416,7 +444,7 @@
             <p class="bfont">去年告白時問了這個問題，那時候你說等我們一年的時候再告訴我，現在可以告訴我了吧</p>
             <img src="ans.jpg">
             <p class="bfont">回答完這個問題就可以拿到禮物了!</p>
-            <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdkD-OIqYGamQrQ5DWCLH5jjLAwvhK3TTA-3VyRP8et-p8i7Q/formResponse"method="POST"target="hidden_iframe"onsubmit="showPage('ans5'),redirectPage()">
+            <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdkD-OIqYGamQrQ5DWCLH5jjLAwvhK3TTA-3VyRP8et-p8i7Q/formResponse"method="POST"target="hidden_iframe"onsubmit="showPage('ans5'),redirectPage(),Hmusic()">
                 <input type="text" name="entry.1127753635" placeholder="回答我!!"><br>
                 <button type="submit"><h2>送出答案</h2></button>
             </form>
@@ -446,15 +474,14 @@
         function redirectPage(){
             window.location.hash = "ans5";
         }
-        window.addEventListener("load", () => {
-            const bgm = document.getElementById("bgm");
-            bgm.muted = true; 
-            bgm.play().then(() => {
-                bgm.muted = false;
-            }).catch(err => {
-                console.log("自動播放被瀏覽器阻擋:", err);
-            });
-        });
+        function bfmusic(){
+            document.getElementById("bgm").play();
+            document.getElementById("bf").classList.add('iz');
+        }
+        function Hmusic(){
+            document.getElementById("bgm").pause();
+            document.getElementById("pingubgm").play();
+        }
     </script>
 </body>
 </html>
