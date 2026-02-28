@@ -37,6 +37,20 @@
         z-index: -1;         /* 放到文字後面 */
     }
 
+    .corner-box{
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        /*background: rgba(255,255,255,0.8);
+        padding: 10px 15px;
+        border-radius: 16px;
+        backdrop-filter: blur(8px);*/
+        z-index: 999;
+    }
+
     .container {
         margin: 0 auto;
         text-align: center;
@@ -270,6 +284,11 @@
 
 <body>
     <audio id="bgm" src="music.mp3" loop></audio>
+    <div class="corner-box">
+        <span id="sfbf">音樂：關</span>  
+        <button onclick="bfmusic()"><img src="bf.png" alt="播放音樂" style="width:15px; height:30px;"></button>
+        
+    </div>  
     <section class="hero">
         <video autoplay muted loop playsinline id="bg-video">
             <source src="首頁背景.mp4" type="video/mp4">
@@ -435,7 +454,7 @@
     
     <script>
         var iDays = parseInt(Math.abs(new Date() - new Date("2025-3-17")) / 1000 / 60 / 60 / 24);
-        document.querySelector("#htext").textContent = iDays;//new Date().toLocaleDateString("zh-TW");
+        document.querySelector("#htext").textContent = iDays;
         document.querySelector("#dayfont").textContent = new Date().toLocaleDateString();
         function answrong(wnum) {
             document.querySelector(wnum).textContent = "答錯囉!再想想看";
@@ -446,10 +465,25 @@
         function redirectPage(){
             window.location.hash = "ans5";
         }
-    
-        document.addEventListener("click", function() {
+
+        function bfmusic() {
+            document.querySelector("#sfbf").textContent = "答錯囉!再想想看";
             document.getElementById("bgm").play();
-        }, { once: true });
+        }
+        window.addEventListener("load", () => {
+            const bgm = document.getElementById("bgm");
+            bgm.muted = true;       // 先靜音
+            bgm.play().then(() => {
+                // 嘗試取消靜音
+                bgm.muted = false;
+            }).catch(err => {
+                console.log("自動播放被瀏覽器阻擋:", err);
+            });
+        });
+    
+        /*document.addEventListener("click", function() {
+            document.getElementById("bgm").play();
+        }, { once: true });*/
     </script>
 </body>
 </html>
