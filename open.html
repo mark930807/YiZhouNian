@@ -269,6 +269,7 @@
 </head>
 
 <body>
+    <audio id="bgm" src="music.mp3" loop></audio>
     <section class="hero">
         <video autoplay muted loop playsinline id="bg-video">
             <source src="首頁背景.mp4" type="video/mp4">
@@ -445,6 +446,10 @@
         function redirectPage(){
             window.location.hash = "ans5";
         }
+    
+        document.addEventListener("click", function() {
+            document.getElementById("bgm").play();
+        }, { once: true });
     </script>
 </body>
 </html>
