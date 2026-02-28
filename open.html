@@ -146,6 +146,12 @@
 
     h1{
         color:#3e3630;
+        border-radius: 8px;
+    }
+
+    .hero h2{
+        font-size: 30px;
+        color:white;
     }
 
     .smaillfont{
@@ -205,53 +211,6 @@
         .giftimg{
             width: 50%;
         }
-        /*.card_bottom img {
-            height: 37px;
-        }
-
-        .topfont {
-            color: #f6f5f3;
-            font-size: 28px;
-        }
-
-        .container {
-            max-width: 750px;
-            margin: 0 auto;
-            padding: 24px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 28px;
-            color: white;
-            margin-bottom: 8px;
-        }
-
-        p {
-            
-            margin-bottom: 16px;
-        }
-
-        h2 {
-            color:white;
-            font-size: 21px;
-        }
-
-        h3 {
-            color:white;
-            font-size: 16px;
-        }
-
-        .bottomfont{
-            color: #f6f5f3;
-            font-size: 15px;
-            margin-bottom: 8px;
-        }
-
-        .fontlr{
-            color: white;
-            margin-left: 200px;
-        }*/
     }
 
 /* 平板以上 / 電腦 */
@@ -314,7 +273,7 @@
         <video autoplay muted loop playsinline id="bg-video">
             <source src="首頁背景.mp4" type="video/mp4">
         </video>
-        <h1 class="title">2026-03-17<br></h1>
+        <h2 class="title"><span id="dayfont"></span><br></h2>
         <h1 class="title">Day<span id="htext"></span><br></h1>
         <p class="title titlesmallfone onapagedown">⇊ 往下滑以繼續 ⇊</p>
     </section>
@@ -476,6 +435,7 @@
     <script>
         var iDays = parseInt(Math.abs(new Date() - new Date("2025-3-17")) / 1000 / 60 / 60 / 24);
         document.querySelector("#htext").textContent = iDays;//new Date().toLocaleDateString("zh-TW");
+        document.querySelector("#dayfont").textContent = new Date().toLocaleDateString();
         function answrong(wnum) {
             document.querySelector(wnum).textContent = "答錯囉!再想想看";
         }
