@@ -313,7 +313,7 @@
                 <div class="slider">
                     <div class="slide-card">
                         <h1>2025 Mar.</h1>
-                        <p>再一起第一天，我們還種了一棵樹，取名叫第一天。</p>
+                        <p>在一起第一天，我們還種了一棵樹，取名叫第一天。</p>
                         <img src="3Y.png">
                     </div>
                     <div class="slide-card">
@@ -454,9 +454,17 @@
         <div id="ans5" class="card2">
             <h1>恭喜你完成所有題目</h1>
             <img class="giftimg" src="pingu.png">
-            <p class="bfont">禮物在行李箱裡，行李箱的密碼是</p>
+            <p class="bfont">禮物在行李箱裡，密碼是</p>
             <h1>387</h1>
         </div>
+        <section class="hero">
+            <video autoplay muted loop playsinline id="bg-video">
+                <source src="star.mp4" type="video/mp4">
+            </video>
+            <h2 class="title"><span id="dayfontb"></span><br></h2>
+            <h1 class="title">Day<span id="hbtext"></span><br></h1>
+            <p class="title titlesmallfone onapagedown"></p>
+        </section>
         <img class="buommt" src="eye2.png">
     </div>
     
@@ -464,7 +472,9 @@
     <script>
         var iDays = parseInt(Math.abs(new Date() - new Date("2025-3-17")) / 1000 / 60 / 60 / 24);
         document.querySelector("#htext").textContent = iDays;
+        document.querySelector("#hbtext").textContent = iDays;
         document.querySelector("#dayfont").textContent = new Date().toLocaleDateString();
+        document.querySelector("#dayfontb").textContent = new Date().toLocaleDateString();
         function answrong(wnum) {
             document.querySelector(wnum).textContent = "答錯囉!再想想看";
         }
