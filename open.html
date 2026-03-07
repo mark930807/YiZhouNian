@@ -75,6 +75,14 @@
         align-items: center;
     }
 
+    .hero.start{
+        display: none;
+    }
+
+    .hero.start.end{
+        display: flex;
+    }
+
     .card1{
         height: 100vh;
         height: 100svh;
@@ -444,7 +452,7 @@
             <p class="bfont">去年告白時問了這個問題，那時候你說等我們一年的時候再告訴我，現在可以告訴我了吧</p>
             <img src="ans.jpg">
             <p class="bfont">回答完這個問題就可以拿到禮物了!</p>
-            <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdkD-OIqYGamQrQ5DWCLH5jjLAwvhK3TTA-3VyRP8et-p8i7Q/formResponse"method="POST"target="hidden_iframe"onsubmit="showPage('ans5'),redirectPage(),Hmusic()">
+            <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdkD-OIqYGamQrQ5DWCLH5jjLAwvhK3TTA-3VyRP8et-p8i7Q/formResponse"method="POST"target="hidden_iframe"onsubmit="showPage('ans5'),showstar(),redirectPage(),Hmusic()">
                 <input type="text" name="entry.1127753635" placeholder="回答我!!"><br>
                 <button type="submit"><h2>送出答案</h2></button>
             </form>
@@ -456,14 +464,15 @@
             <img class="giftimg" src="pingu.png">
             <p class="bfont">禮物在行李箱裡，密碼是</p>
             <h1>387</h1>
+            <p class="titlesmallfone">⇊ 往下滑以繼續 ⇊</p>
         </div>
-        <section class="hero">
+        <section id="star" class="hero start">
             <video autoplay muted loop playsinline id="bg-video">
                 <source src="star.mp4" type="video/mp4">
             </video>
             <h2 class="title"><span id="dayfontb"></span><br></h2>
             <h1 class="title">Day<span id="hbtext"></span><br></h1>
-            <p class="title titlesmallfone onapagedown"></p>
+            <p class="title titlesmallfone onapagedown">One year together</p>
         </section>
         <img class="buommt" src="eye2.png">
     </div>
@@ -480,6 +489,9 @@
         }
         function showPage(pageId) {
             document.getElementById(pageId).classList.add('active');
+        }
+        function showstar() {
+            document.getElementById("star").classList.add('end');
         }
         function redirectPage(){
             window.location.hash = "ans5";
